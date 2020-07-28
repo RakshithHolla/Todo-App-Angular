@@ -1,0 +1,19 @@
+<div style="text-align: center;">
+
+  <h1 class="app-title">My TODO List</h1>
+</div>
+<div class="container">
+  Add a TODO..
+  <br>
+  <input type="text" class="input-text" placeholder="type a TODO" (keyup.enter)="addTodo()" [(ngModel)]="todoValue">
+  <button class="add-btn" (click)="addTodo()">Add TODO</button>
+  <div class="list">
+    <ul>
+      <li *ngFor="let item of list">
+        <input type="checkbox" name="isDone" [(ngModel)]="item.isDone">
+        {{item.value}}
+        <button class="btn" (click)="deleteTodo(item.id)">Delete TODO</button>
+      </li>
+    </ul>
+  </div>
+</div>
